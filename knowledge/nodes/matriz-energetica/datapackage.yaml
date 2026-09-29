@@ -1,0 +1,34 @@
+name: matriz-energetica
+title: Generación y Matriz Energética
+description: Desglose horario y diario de inyección eléctrica al sistema interconectado nacional según tecnologías renovables y convencionales.
+resources:
+  - name: balance_generacion_diaria
+    type: table
+    path: https://raw.githubusercontent.com/datasets/energy-sample/master/data/generacion.csv
+    scheme: file
+    format: csv
+    mediatype: text/csv
+    encoding: utf-8
+    schema:
+      fields:
+        - name: fecha
+          type: date
+          description: Fecha de operación del despacho eléctrico
+        - name: tecnologia
+          type: string
+          description: Tipo de generación (Hidroeléctrica, Solar, Eólica, Térmica Gas, Biomasa)
+        - name: tipo_fuente
+          type: string
+          description: Clasificación de sostenibilidad (Renovable, Fósil)
+        - name: potencia_instalada_mw
+          type: number
+          description: Capacidad instalada nominal en megavatios (MW)
+        - name: energia_generada_mwh
+          type: number
+          description: Energía neta generada e inyectada al sistema en megavatios-hora (MWh)
+        - name: factor_planta_pct
+          type: number
+          description: Porcentaje de aprovechamiento efectivo de la capacidad
+        - name: emisiones_co2_ton
+          type: number
+          description: Emisiones de dióxido de carbono estimadas en toneladas

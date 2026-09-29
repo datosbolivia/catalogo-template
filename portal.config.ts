@@ -35,30 +35,30 @@ export interface PortalConfig {
 
 export const config: PortalConfig = {
   organization: {
-    name: "Datos Bolivia",
-    slug: "datos-bolivia",
-    url: "https://datos-bolivia.github.io",
-    github: "https://github.com/andres-chirinos/catalogo-datamesh",
-    description: "Iniciativa colaborativa y abierta de datos federados de Bolivia."
+    name: "DataMesh Sovereign Organization",
+    slug: "datamesh-org",
+    url: "https://datamesh-template.example.org",
+    github: "https://github.com/organization/catalogo-datamesh",
+    description: "Iniciativa colaborativa y abierta de datos federados soberanos."
   },
   site: {
-    title: "Datos Bolivia",
-    description: "Portal catálogo de Datos Abiertos de Bolivia",
-    tagline: "Datos abiertos y descentralizados para la comunidad.",
-    url: "https://datos-bolivia.github.io",
+    title: "DataMesh Catalog",
+    description: "Portal catálogo de Datos Abiertos y Federados",
+    tagline: "Datos abiertos y descentralizados para la comunidad y Agentes de IA.",
+    url: "https://datamesh-template.example.org",
     base: "/"
   },
   pwa: {
     enabled: true,
-    name: "DataMesh Bolivia - Portal de Datos",
-    shortName: "DatosBolivia",
-    themeColor: "#0b243f",
-    backgroundColor: "#fafafa"
+    name: "DataMesh Catalog - Portal de Datos",
+    shortName: "DataMesh",
+    themeColor: "#0f766e",
+    backgroundColor: "#fcfbf9"
   },
   desktopApp: {
     enabled: true,
-    name: "DataMesh Bolivia Desktop",
-    downloadUrl: "https://github.com/andres-chirinos/catalogo-datamesh/releases",
+    name: "DataMesh Catalog Desktop",
+    downloadUrl: "https://github.com/organization/catalogo-datamesh/releases",
     enableLocalProcessing: true
   },
   nav: [

@@ -1,0 +1,37 @@
+name: tramites-gobierno
+title: Directorio de Trámites y Servicios del Estado
+description: Catálogo unificado de trámites ciudadanos, costos arancelarios, requisitos y tiempos estimados de resolución.
+resources:
+  - name: catalogo_tramites_publicos
+    type: table
+    path: https://raw.githubusercontent.com/datasets/services-sample/master/data/tramites.csv
+    scheme: file
+    format: csv
+    mediatype: text/csv
+    encoding: utf-8
+    schema:
+      fields:
+        - name: codigo_tramite
+          type: string
+          description: Identificador alfanumérico único del servicio
+        - name: nombre_servicio
+          type: string
+          description: Denominación oficial del trámite o procedimiento
+        - name: entidad_emisora
+          type: string
+          description: Ministerio, secretaría o entidad pública responsable
+        - name: categoria_servicio
+          type: string
+          description: Categoría funcional (Identidad, Tributario, Educación, Salud)
+        - name: costo_moneda_local
+          type: number
+          description: Arancel oficial aplicable en moneda nacional (0 si es gratuito)
+        - name: tiempo_resolucion_dias
+          type: integer
+          description: Plazo legal máximo de atención en días hábiles
+        - name: canal_atencion
+          type: string
+          description: Modalidad de atención (Presencial, En Línea, Híbrido)
+        - name: enlace_oficial
+          type: string
+          description: URL del portal de gestión o plataforma estatal

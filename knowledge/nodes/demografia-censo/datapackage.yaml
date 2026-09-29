@@ -1,0 +1,34 @@
+name: demografia-censo
+title: Censo y Demografía de Población
+description: Datos estadísticos y demográficos desagregados por regiones territoriales, población urbana/rural y composición por edad.
+resources:
+  - name: censo_poblacion_distritos
+    type: table
+    path: https://raw.githubusercontent.com/datasets/population-sample/master/data/distritos.csv
+    scheme: file
+    format: csv
+    mediatype: text/csv
+    encoding: utf-8
+    schema:
+      fields:
+        - name: codigo_distrito
+          type: string
+          description: Código identificador geográfico estándar del distrito
+        - name: nombre_distrito
+          type: string
+          description: Nombre de la unidad territorial o departamento
+        - name: poblacion_total
+          type: integer
+          description: Número total de habitantes censados
+        - name: poblacion_urbana
+          type: integer
+          description: Habitantes en áreas concentradas urbanas
+        - name: poblacion_rural
+          type: integer
+          description: Habitantes en comunidades y áreas rurales dispersas
+        - name: hogares_censados
+          type: integer
+          description: Total de viviendas y hogares particulares censados
+        - name: indice_masculinidad
+          type: number
+          description: Número de hombres por cada 100 mujeres

@@ -1,85 +1,101 @@
-# Catálogo Federado DataMesh Bolivia (`datos-bolivia`)
+# DataMesh Sovereign Catalog — Template Repository
 
-[![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22986311.svg)](https://doi.org/10.5281/zenodo.22986311)
-[![OKF v0.2](https://img.shields.io/badge/standard-OKF%20%2F%20ODKF%20v0.2-blue)](docs/especificacion_knowledge.md)
-[![PWA Ready](https://img.shields.io/badge/PWA-offline--ready-green)](public/manifest.webmanifest)
-[![Astro](https://img.shields.io/badge/built%20with-Astro-ff5d01.svg)](https://astro.build)
-
-Bienvenido al Registro Central y Portal de Datos Abiertos de la red **DataMesh Bolivia**, administrado por la comunidad **`datos-bolivia`**. 
-
-Este repositorio actúa como el índice principal de descubrimiento para que investigadores, analistas ciudadanos y **Agentes de Inteligencia Artificial (LLMs)** puedan encontrar, verificar y consultar conjuntos de datos públicos soberanos bajo los estándares abiertos **Open Knowledge Format (OKF v0.2)** y **Frictionless DataPackage**.
+Plantilla soberana y federada para la publicación de catálogos de datos abiertos, diseñada bajo principios de descentralización, contratos sintácticos verificables (**Open Knowledge Format v0.2**) y optimización para analistas ciudadanos y **Agentes de Inteligencia Artificial (LLMs)**.
 
 ---
 
-## Estructura de Navegación del Portal
+## Características Principales
 
-La aplicación web está estructurada bajo 5 rutas consolidadas y amigables:
-
-1. **`/` (Inicio)**: Resumen del ecosistema, métricas de nodos federados y acceso directo a los datasets destacados.
-2. **`/datasets`**: Explorador y buscador en tiempo real del catálogo, con fichas detalladas por dataset en `/datasets/[slug]` (esquemas tabulares, columnas, tipos de datos, conceptos SKOS y enlaces de descarga).
-3. **`/about`**: Fundamentos del proyecto, enlace formal al **Whitepaper oficial en Zenodo** ([DOI: 10.5281/zenodo.22986311](https://doi.org/10.5281/zenodo.22986311)), información sobre la **Primera Charla Comunitaria** y principios de la organización `datos-bolivia`.
-4. **`/docs`**: Especificación técnica normativa ODKF v0.2, guías de gobernanza y Registros de Decisión de Arquitectura (**ADRs**).
-5. **`/download`**: Centro de distribución multiplataforma: instalación directa como **Progressive Web App (PWA)** y descarga de la **Aplicación de Escritorio (Electron)** con capacidades extendidas de cómputo local.
-
-### Rutas para Agentes de Inteligencia Artificial
-- **`/llms.txt`**: Manifiesto canónico según el estándar [llmstxt.org](https://llmstxt.org) para descubrimiento semántico por LLMs.
-- **`/llms-full.txt`**: Compendio exhaustivo con todos los esquemas y metadatos concatenados para prompts de contexto largo.
-- **`/raw/[...slug]`**: Endpoint que expone los archivos Markdown originales intactos con `Content-Type: text/markdown; charset=utf-8`.
+- **Arquitectura Estática 100% Autónoma (SSG con Astro):** Compila páginas HTML puras sin dependencias de servidor ni bases de datos activas en producción.
+- **Explorador Estilo Obsidian (Zero Scroll):** Navegación fluida por árbol de archivos (`index.md`, `knowledge/`, `concepts/`, tablas y esquemas) en una vista compacta con viewport delimitado.
+- **Contratos Sintácticos Frictionless:** Cada dataset incluye `datapackage.yaml` con tipado estricto a nivel de columna (string, number, date, etc.).
+- **Interoperabilidad Semántica W3C SKOS:** Enlaces ontológicos directos a vocabularios abiertos y entidades de Wikidata (`prefLabel`, `exactMatch`, `broader`).
+- **Filtro Multi-Selección de Dominios y Vistas:** Filtrado combinable por categorías a la izquierda y conmutador accesible de vista en cuadrícula / lista a la derecha.
+- **Internacionalización Completa (i18n):** Paridad 1:1 estricta entre Español e Inglés con conmutación dinámica en tiempo de ejecución (`data-i18n` y `data-i18n-title`).
+- **Soporte Nativo para Agentes LLM:** Endpoints `/llms.txt`, `/llms-full.txt` y `/raw/[...slug]` con formato limpio Markdown.
+- **Distribución Multiplataforma:** Progressive Web App (PWA) offline instalable y contenedor de escritorio (Electron) para procesamiento local.
+- **Suite de Auditoría Automatizada:** 15 pruebas de cumplimiento normativo (rutas, neutralidad, layouts, paridad i18n, linter OKF).
 
 ---
 
-## Arquitectura Desacoplada y Plantilla Forkeable
+## 5 Rutas Canónicas del Portal
 
-Este repositorio está diseñado para que cualquier gobierno local, universidad o colectivo ciudadano pueda crear su propio portal de datos abiertos haciendo un simple fork:
-
-- **Contenido 100% en Markdown**: Los textos editoriales de las páginas se editan directamente en `content/pages/` (`home.md`, `about.md`, `download.md`) sin tocar código Astro.
-- **Tokens de Diseño Centralizados**: Modifica la paleta institucional, fuentes y espaciados editando únicamente `src/styles/theme.css`.
-- **Configuración Global**: Modifica el nombre de la entidad, logos y enlaces en `portal.config.ts`.
-- *Consulta la guía paso a paso en:* [`docs/GUIAS_FORK_Y_DESPLIEGUE.md`](docs/GUIAS_FORK_Y_DESPLIEGUE.md).
+1. **`/` (Inicio):** Resumen del catálogo, buscador cívico integrado, métricas y temáticas prioritarias.
+2. **`/datasets`:** Catálogo interactivo con multi-selección de dominios, búsqueda por texto y selector de vistas (cuadrícula/lista). Fichas en `/datasets/[slug]` y subdocumentos en `/datasets/[slug]/[...doc]`.
+3. **`/about`:** Fundamentos de la Malla de Datos (DataMesh), gobernanza descentralizada y estándares abiertos.
+4. **`/docs`:** Centro documental con especificaciones normativas, guías de despliegue, notas técnicas y Registros de Decisión de Arquitectura (ADRs).
+5. **`/download`:** Instalador de la Progressive Web App (PWA) y versiones de escritorio.
 
 ---
 
-## Comandos Rápidos
+## Inicio Rápido
+
+### 1. Clonar e Instalar
 
 ```bash
-# Instalar dependencias
+git clone https://github.com/tu-organizacion/catalogo-datamesh.git
+cd catalogo-datamesh
 npm install
+```
 
-# Iniciar servidor de desarrollo en http://localhost:8001
-make dev
+### 2. Ejecutar en Desarrollo
 
-# Auditar conformidad OKF y contratos Frictionless
-make lint
+```bash
+npm run dev
+```
 
-# Compilar sitio web estático y PWA hacia dist/
-make build
+Accede a `http://localhost:8001` en tu navegador.
 
-# Previsualizar el build estático
-make preview
+### 3. Validar y Auditar
 
-# Ejecutar como aplicación de escritorio (Electron)
-make electron-dev
+```bash
+# Validar esquemas y bundles OKF v0.2
+npm run lint:okf
 
-# Empaquetar instaladores de escritorio (Linux AppImage/deb, Windows zip/exe)
-make electron-build
+# Ejecutar auditoría integral de 15 pruebas normativas
+npm run audit
+
+# Compilar sitio estático
+npm run build
 ```
 
 ---
 
-## ¿Cómo agregar un nuevo Nodo a la red federada?
+## Datasets de Ejemplo Incluidos
 
-Para federar tu institución o repositorio de datos:
-1. Publica una carpeta en `knowledge/nodes/<mi-nodo>/` con su archivo `index.md` (metadatos OKF) y `datapackage.yaml` (contrato Frictionless con columnas tipadas).
-2. Valida la conformidad:
-   ```bash
-   npm run lint:okf
-   ```
-3. Registra tu enlace en `knowledge/index.md` y envía un **Pull Request**.
+Esta plantilla incluye 5 conjuntos de datos de ejemplo que ilustran los tipos más comunes de información pública:
 
-Consulta la especificación completa en [`docs/especificacion_knowledge.md`](docs/especificacion_knowledge.md).
+| Dataset | Dominio | Tipo de Datos | Características Destacadas |
+|---------|---------|---------------|----------------------------|
+| [`air_quality`](knowledge/nodes/air_quality/) | Medio Ambiente | Sensores / Series temporales | Coordenadas geoespaciales, conceptos SKOS (PM2.5, ICA), gráficos interactivos. |
+| [`indicadores-inflacion`](knowledge/nodes/indicadores-inflacion/) | Economía | Índices y porcentajes | Multi-recurso (nacional, divisiones COICOP, ciudades), concepto SKOS de IPC. |
+| [`demografia-censo`](knowledge/nodes/demografia-censo/) | Demografía | Tabular territorial | Desglose urbano/rural, definiciones censales, gráficos de barras. |
+| [`tramites-gobierno`](knowledge/nodes/tramites-gobierno/) | Gobierno | Catálogo de servicios | Costos arancelarios, plazos de resolución, estándar de interoperabilidad. |
+| [`matriz-energetica`](knowledge/nodes/matriz-energetica/) | Energía | Balance de generación | Comparativa renovable vs. fósil, factor de planta, emisiones CO2. |
 
 ---
 
-## Licencia y Cita
-- **Publicación:** *DataMesh Bolivia: Hacia un Ecosistema de Datos Colaborativo y Abierto*. Chirinos Lizondo, Andrés Humberto (2025). [DOI: 10.5281/zenodo.22986311](https://doi.org/10.5281/zenodo.22986311).
-- **Código y Catálogo:** Publicado bajo estándares de Conocimiento Abierto para el bien público.
+## Personalización
+
+1. **Configuración Global:** Modifica [`portal.config.ts`](portal.config.ts) con los datos y redes de tu organización.
+2. **Estilo e Identidad Visual:** Ajusta los tokens de diseño (colores, fuentes, bordes) en [`src/styles/theme.css`](src/styles/theme.css) siguiendo las pautas de [`DESIGN.md`](DESIGN.md).
+3. **Páginas Editoriales:** Edita el contenido Markdown en `content/pages/` (`home.md`, `about.md`, `download.md`).
+4. **Agregar Datasets:** Sigue las instrucciones de [`docs/GUIA_INICIO_RAPIDO.md`](docs/GUIA_INICIO_RAPIDO.md).
+
+---
+
+## Despliegue
+
+La carpeta `dist/` generada por `npm run build` es 100% estática. Se puede alojar directamente en:
+- **Cloudflare Pages**
+- **GitHub Pages**
+- **Vercel / Netlify**
+- **Servidores Nginx / Apache / Docker**
+
+Para instrucciones detalladas de configuración de DNS y CI/CD, consulta [`docs/GUIAS_FORK_Y_DESPLIEGUE.md`](docs/GUIAS_FORK_Y_DESPLIEGUE.md).
+
+---
+
+## Estándares y Contribución
+
+Consulta [`CONTRIBUTING.md`](CONTRIBUTING.md) para conocer las directrices de contribución, convenciones de código y políticas de neutralidad institucional.
