@@ -14,12 +14,12 @@ Este repositorio está arquitecturado específicamente para ser **forkeable**: c
 
 ## Paso 1: Hacer Fork del Repositorio
 
-1. Dirígete a [github.com/datosbolivia/catalogo](https://github.com/datosbolivia/catalogo) y presiona el botón **Fork**.
+1. Dirígete a [github.com/datosbolivia/catalogo-template](https://github.com/datosbolivia/catalogo-template) y presiona el botón **Fork**.
 2. Clona tu repositorio forkeado:
    
 ```bash
-git clone https://github.com/datosbolivia/catalogo.git
-cd catalogo
+git clone https://github.com/datosbolivia/catalogo-template.git
+cd catalogo-template
 npm install
 ```
 

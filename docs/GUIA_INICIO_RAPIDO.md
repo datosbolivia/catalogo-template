@@ -23,8 +23,8 @@ Bienvenido al repositorio template de **DataMesh Sovereign Catalog**. Este porta
 
 ```bash
 # 1. Clonar el repositorio template
-git clone https://github.com/tu-organizacion/catalogo-datamesh.git
-cd catalogo-datamesh
+git clone https://github.com/datosbolivia/catalogo-template.git
+cd catalogo-template
 
 # 2. Instalar dependencias
 npm install

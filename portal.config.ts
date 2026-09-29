@@ -35,17 +35,17 @@ export interface PortalConfig {
 
 export const config: PortalConfig = {
   organization: {
-    name: "DataMesh Sovereign Organization",
-    slug: "datamesh-org",
-    url: "https://datamesh-template.example.org",
-    github: "https://github.com/organization/catalogo-datamesh",
+    name: "Datos Bolivia",
+    slug: "datos-bolivia",
+    url: "https://datosbolivia.github.io/catalogo-template",
+    github: "https://github.com/datosbolivia/catalogo-template",
     description: "Iniciativa colaborativa y abierta de datos federados soberanos."
   },
   site: {
-    title: "DataMesh Catalog",
-    description: "Portal catálogo de Datos Abiertos y Federados",
+    title: "DataMesh Catalog Template",
+    description: "Plantilla soberana y federada de catálogo de datos abiertos",
     tagline: "Datos abiertos y descentralizados para la comunidad y Agentes de IA.",
-    url: "https://datamesh-template.example.org",
+    url: "https://datosbolivia.github.io/catalogo-template",
     base: "/"
   },
   pwa: {
@@ -58,7 +58,7 @@ export const config: PortalConfig = {
   desktopApp: {
     enabled: true,
     name: "DataMesh Catalog Desktop",
-    downloadUrl: "https://github.com/organization/catalogo-datamesh/releases",
+    downloadUrl: "https://github.com/datosbolivia/catalogo-template/releases",
     enableLocalProcessing: true
   },
   nav: [

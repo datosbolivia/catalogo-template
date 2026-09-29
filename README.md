@@ -33,8 +33,8 @@ Plantilla soberana y federada para la publicación de catálogos de datos abiert
 ### 1. Clonar e Instalar
 
 ```bash
-git clone https://github.com/tu-organizacion/catalogo-datamesh.git
-cd catalogo-datamesh
+git clone https://github.com/datosbolivia/catalogo-template.git
+cd catalogo-template
 npm install
 ```
 
